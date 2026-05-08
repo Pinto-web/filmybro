@@ -4,32 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently -n \"mongo,server,vite\" -c \"green,blue,yellow\" \"npm run dev:mongo\" \"npm run dev:backend\" \"vite\"",
-    "dev:backend": "cd backend && node server.js",
+    "dev": "concurrently -n \"mongo,server,vite\" -c \"green,blue,yellow\" \"npm run dev:mongo\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
     "dev:mongo": "nc -z localhost 27017 && echo '✓ MongoDB already running on 27017' || ./db-server/bin/mongod --dbpath ./db-server/data/db",
     "start": "npm run dev",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "axios": "^1.13.6",
-    "framer-motion": "^12.38.0",
-    "lucide-react": "^0.344.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-hot-toast": "^2.6.0",
-    "react-router-dom": "^7.13.2"
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview"
   },
   "devDependencies": {
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "@vitejs/plugin-react": "^6.0.1",
-    "@vitejs/plugin-react-oxc": "^0.4.3",
-    "autoprefixer": "^10.4.18",
-    "concurrently": "^9.2.1",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1",
-    "vite": "^8.0.3",
-    "vite-plugin-pwa": "^1.2.0"
+    "concurrently": "^9.2.1"
   }
 }
