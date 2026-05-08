@@ -111,10 +111,12 @@ const MoviesPage = () => {
       }
     };
     fetchData();
-  }, [category, searchQuery, ratings]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [category, searchQuery]);
 
   const processedItems = useMemo(() => {
     return items.filter(i => {
+      if (category === 'brocommends' && ratings[i.id]) return false;
       const year = parseInt((i.release_date || i.first_air_date || '0').substring(0, 4));
       if (filterYear === 'new') return year >= 2020;
       if (filterYear === 'old') return year > 0 && year < 2020;
@@ -124,7 +126,7 @@ const MoviesPage = () => {
       if (filterRating === 'low') return (a.vote_average || 0) - (b.vote_average || 0);
       return 0;
     });
-  }, [items, filterYear, filterRating]);
+  }, [items, filterYear, filterRating, category, ratings]);
 
   return (
     <div className="w-full min-h-screen pt-4 pb-16 px-8 relative z-20">
