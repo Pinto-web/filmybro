@@ -108,7 +108,7 @@ const CreatePlaylistModal = ({ onClose, onSuccess }) => {
         flatItems: isTierList ? [] : flatItems
       };
 
-      const res = await axios.post('http://localhost:5000/api/playlists', payload, {
+      const res = await axios.post('/api/playlists', payload, {
         headers: { Authorization: `Bearer ${user.token}` }
       });
 

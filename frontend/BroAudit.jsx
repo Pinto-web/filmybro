@@ -59,7 +59,7 @@ const BroAudit = ({ movie, onClose }) => {
     
     // fetch users to tag
     if (user && user.token) {
-      fetch('http://localhost:5000/api/users', { headers: { 'Authorization': `Bearer ${user.token}` } })
+      fetch('/api/users', { headers: { 'Authorization': `Bearer ${user.token}` } })
         .then(res => res.json())
         .then(data => {
             if (Array.isArray(data)) {
@@ -100,7 +100,7 @@ const BroAudit = ({ movie, onClose }) => {
         taggedBros: taggedBros.map(b => b._id)
       };
 
-      const res = await fetch('http://localhost:5000/api/reviews', {
+      const res = await fetch('/api/reviews', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

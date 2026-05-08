@@ -32,7 +32,7 @@ const BacklogPage = () => {
         }
         
         // 1. Get raw watchlist IDs
-        const idsRes = await axios.get('http://localhost:5000/api/users/watchlist', {
+        const idsRes = await axios.get('/api/users/watchlist', {
           headers: { Authorization: `Bearer ${user.token}` }
         });
         
@@ -76,7 +76,7 @@ const BacklogPage = () => {
     if (!user) return;
 
     try {
-      const res = await axios.post('http://localhost:5000/api/users/watchlist/toggle', 
+      const res = await axios.post('/api/users/watchlist/toggle', 
         { movieId }, 
         { headers: { Authorization: `Bearer ${user.token}` } }
       );

@@ -32,7 +32,7 @@ const MoviesPage = () => {
     setRatings(stored);
 
     if (user && user.token) {
-      axios.get('http://localhost:5000/api/users/watchlist', {
+      axios.get('/api/users/watchlist', {
         headers: { Authorization: `Bearer ${user.token}` }
       })
       .then(res => setWatchlist(res.data))
@@ -58,7 +58,7 @@ const MoviesPage = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/users/watchlist/toggle', 
+      const res = await axios.post('/api/users/watchlist/toggle', 
         { movieId }, 
         { headers: { Authorization: `Bearer ${user.token}` } }
       );

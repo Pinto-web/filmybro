@@ -21,7 +21,7 @@ const PlaylistsPage = () => {
     setLoading(true);
     try {
       const endpoint = tab === 'global' ? '/api/playlists/global' : '/api/playlists/my';
-      const res = await axios.get(`http://localhost:5000${endpoint}`, {
+      const res = await axios.get(endpoint, {
         headers: { Authorization: `Bearer ${user.token}` }
       });
       setPlaylists(res.data.data);
@@ -34,7 +34,7 @@ const PlaylistsPage = () => {
 
   const likePlaylist = async (id) => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/playlists/${id}/like`, {}, {
+      const res = await axios.put(`/api/playlists/${id}/like`, {}, {
         headers: { Authorization: `Bearer ${user.token}` }
       });
       setPlaylists(playlists.map(p => p._id === id ? { ...p, likes: res.data.data.likes } : p));

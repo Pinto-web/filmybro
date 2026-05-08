@@ -28,7 +28,7 @@ const ReviewsPage = () => {
         if (!user || !user.token) return;
 
         // Fetch backend
-        const res = await axios.get('http://localhost:5000/api/reviews/me', {
+        const res = await axios.get('/api/reviews/me', {
           headers: { Authorization: `Bearer ${user.token}` }
         });
 
