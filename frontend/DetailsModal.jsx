@@ -62,8 +62,8 @@ const DetailsModal = ({ selectedMovie, onClose, onRateClick }) => {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl bg-[#080808] border border-white/10 rounded-[2.5rem] overflow-hidden shadow-[0_40px_120px_rgba(0,0,0,0.9)] flex flex-col"
-        style={{ animation: 'modalPop 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards' }}
+        className="relative w-full max-w-4xl premium-glass bg-black/80 rounded-[2.5rem] overflow-hidden shadow-[0_40px_120px_rgba(0,0,0,0.95)] flex flex-col border border-white/10 ring-1 ring-white/5"
+        style={{ animation: 'modalPop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards' }}
         onClick={e => e.stopPropagation()}
       >
         {/* Backdrop Hero */}

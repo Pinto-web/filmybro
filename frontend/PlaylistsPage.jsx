@@ -96,7 +96,7 @@ const PlaylistsPage = () => {
         ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                {playlists.map((pl) => (
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} key={pl._id} className="glass-card rounded-[2rem] p-6 flex flex-col shadow-xl">
+                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} key={pl._id} className="premium-glass rounded-[2.5rem] p-8 flex flex-col hover:border-red-600/40 hover:shadow-[0_20px_60px_rgba(229,9,20,0.2)] transition-all duration-500">
                       <div className="flex items-center justify-between mb-4">
                          <div className="flex items-center gap-3">
                            {pl.isTierList ? (

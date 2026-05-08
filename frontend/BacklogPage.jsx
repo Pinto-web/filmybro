@@ -164,7 +164,7 @@ const BacklogPage = () => {
             const myRating = ratings[item.id];
             return (
               <div key={item.id} className="group cursor-pointer flex flex-col">
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-[#0f0f13] transition-all duration-300 md:hover:border-red-600/60 shadow-[0_15px_40px_rgba(0,0,0,0.6)] md:hover:shadow-[0_0_40px_rgba(239,68,68,0.25)] md:hover:-translate-y-2">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden premium-glass transition-all duration-500 md:hover:border-red-600/60 md:hover:shadow-[0_0_40px_rgba(229,9,20,0.4)] group/poster">
                   <img
                     src={item.poster_path ? `${IMG_PATH}${item.poster_path}` : 'https://via.placeholder.com/500x750'}
                     className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110"
@@ -183,16 +183,16 @@ const BacklogPage = () => {
                   </div>
 
                   {/* Hover Actions */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-end pb-5 gap-3" onClick={() => !isRolling && setSelectedMovie(item)}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover/poster:opacity-100 transition-all duration-300 flex flex-col items-center justify-end pb-6 gap-3 translate-y-4 group-hover/poster:translate-y-0" onClick={() => !isRolling && setSelectedMovie(item)}>
                     <button
                       onClick={e => { e.stopPropagation(); !isRolling && setSelectedMovie(item); }}
-                      className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white text-[10px] font-black uppercase px-4 py-2 rounded-full border border-white/20 transition-all w-28 justify-center"
+                      className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white text-[10px] font-black uppercase px-4 py-2 rounded-full border border-white/20 transition-all w-28 justify-center shadow-lg"
                     >
                       <Info size={12} /> Details
                     </button>
                     <button
                       onClick={e => { e.stopPropagation(); !isRolling && setAuditItem(item); }}
-                      className="flex items-center gap-2 bg-red-600/90 hover:bg-red-500 text-white text-[10px] font-black uppercase px-4 py-2 rounded-full transition-all shadow-lg shadow-red-600/30 w-28 justify-center"
+                      className="flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 hover:scale-105 text-white text-[10px] font-black uppercase px-4 py-2 rounded-full transition-all shadow-[0_0_20px_rgba(229,9,20,0.5)] w-28 justify-center"
                     >
                       <Flame size={12} /> Rate
                     </button>

@@ -132,9 +132,10 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen w-full bg-[#030305] font-sans text-white overflow-hidden">
-      <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-brandRed/10 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-orange-600/5 blur-[150px] rounded-full pointer-events-none" />
+    <div className="relative min-h-screen w-full bg-[#030305] font-sans text-white overflow-hidden noise-bg">
+      <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-brandRed/15 blur-[180px] rounded-full pointer-events-none animate-float" />
+      <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-orange-600/10 blur-[150px] rounded-full pointer-events-none animate-pulse-slow" />
+      <div className="absolute top-[30%] left-[40%] w-[40%] h-[40%] bg-cinemaCard/80 blur-[120px] rounded-full pointer-events-none animate-float" style={{ animationDelay: '2s' }} />
 
 
       {/* SPLASH SCREEN */}
@@ -176,14 +177,14 @@ function App() {
               </div>
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-2 bg-white/5 p-1.5 rounded-full border border-white/10 shadow-lg backdrop-blur-md">
-              <button onClick={(e) => handleProtectedNavigation(e, '/movies')} className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${location.pathname==='/movies'?'bg-brandRed text-white shadow-md':'text-gray-400 hover:text-white hover:bg-white/10'}`}>MOVIES</button>
-              <button onClick={(e) => handleProtectedNavigation(e, '/trending')} className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${location.pathname==='/trending'?'bg-brandRed text-white shadow-md':'text-gray-400 hover:text-white hover:bg-white/10'}`}>TRENDING</button>
-              <button onClick={(e) => handleProtectedNavigation(e, '/backlog')} className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${location.pathname==='/backlog'?'bg-brandRed text-white shadow-md':'text-gray-400 hover:text-white hover:bg-white/10'}`}>THE BACKLOG</button>
-              <button onClick={(e) => handleProtectedNavigation(e, '/reviews')} className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${location.pathname==='/reviews'?'bg-brandRed text-white shadow-md':'text-gray-400 hover:text-white hover:bg-white/10'}`}>REVIEWS</button>
-              <button onClick={(e) => handleProtectedNavigation(e, '/playlists')} className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${location.pathname==='/playlists'?'bg-brandRed text-white shadow-md':'text-gray-400 hover:text-white hover:bg-white/10'}`}>BROLISTS</button>
+            <nav className="hidden lg:flex items-center gap-2 premium-glass p-1.5 rounded-full z-50">
+              <button onClick={(e) => handleProtectedNavigation(e, '/movies')} className={`px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${location.pathname==='/movies'?'bg-brandRed text-white shadow-[0_0_15px_rgba(229,9,20,0.5)] scale-105':'text-gray-400 hover:text-white hover:bg-white/10 hover:scale-105'}`}>MOVIES</button>
+              <button onClick={(e) => handleProtectedNavigation(e, '/trending')} className={`px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${location.pathname==='/trending'?'bg-brandRed text-white shadow-[0_0_15px_rgba(229,9,20,0.5)] scale-105':'text-gray-400 hover:text-white hover:bg-white/10 hover:scale-105'}`}>TRENDING</button>
+              <button onClick={(e) => handleProtectedNavigation(e, '/backlog')} className={`px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${location.pathname==='/backlog'?'bg-brandRed text-white shadow-[0_0_15px_rgba(229,9,20,0.5)] scale-105':'text-gray-400 hover:text-white hover:bg-white/10 hover:scale-105'}`}>THE BACKLOG</button>
+              <button onClick={(e) => handleProtectedNavigation(e, '/reviews')} className={`px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${location.pathname==='/reviews'?'bg-brandRed text-white shadow-[0_0_15px_rgba(229,9,20,0.5)] scale-105':'text-gray-400 hover:text-white hover:bg-white/10 hover:scale-105'}`}>REVIEWS</button>
+              <button onClick={(e) => handleProtectedNavigation(e, '/playlists')} className={`px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${location.pathname==='/playlists'?'bg-brandRed text-white shadow-[0_0_15px_rgba(229,9,20,0.5)] scale-105':'text-gray-400 hover:text-white hover:bg-white/10 hover:scale-105'}`}>BROLISTS</button>
 
-              <Link to="/about" className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${location.pathname==='/about'?'bg-brandRed text-white shadow-md':'text-gray-400 hover:text-white hover:bg-white/10'}`}>ABOUT US</Link>
+              <Link to="/about" className={`px-5 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${location.pathname==='/about'?'bg-brandRed text-white shadow-[0_0_15px_rgba(229,9,20,0.5)] scale-105':'text-gray-400 hover:text-white hover:bg-white/10 hover:scale-105'}`}>ABOUT US</Link>
             </nav>
 
             <div className="flex items-center gap-4">

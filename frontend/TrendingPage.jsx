@@ -102,7 +102,7 @@ const TrendingPage = () => {
           return (
             <div key={item.id} className="group cursor-pointer flex flex-col">
               {/* Poster Container */}
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-[#0f0f13] transition-all duration-300 md:hover:border-red-600/60 shadow-[0_15px_40px_rgba(0,0,0,0.6)] md:hover:shadow-[0_0_40px_rgba(239,68,68,0.25)] md:hover:-translate-y-2">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden premium-glass transition-all duration-500 hover:border-red-600/60 hover:shadow-[0_0_40px_rgba(229,9,20,0.4)] group/poster">
                 <img
                   src={item.poster_path ? `${IMG_PATH}${item.poster_path}` : 'https://via.placeholder.com/500x750'}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -139,20 +139,20 @@ const TrendingPage = () => {
 
                 {/* Hover overlay */}
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all flex flex-col items-center justify-end pb-4 gap-2"
+                  className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover/poster:opacity-100 transition-all duration-300 flex flex-col items-center justify-end pb-6 gap-3 translate-y-4 group-hover/poster:translate-y-0"
                   onClick={() => setSelectedMovie(item)}
                 >
                   <button
                     onClick={e => { e.stopPropagation(); setSelectedMovie(item); }}
-                    className="flex items-center gap-1.5 bg-white/15 hover:bg-white/25 backdrop-blur text-white text-[9px] font-black uppercase px-3 py-1.5 rounded-full border border-white/20 transition-all"
+                    className="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white text-[10px] font-black uppercase px-4 py-2 rounded-full border border-white/20 transition-all shadow-lg"
                   >
-                    <Info size={10} /> Details
+                    <Info size={12} /> Details
                   </button>
                   <button
                     onClick={e => { e.stopPropagation(); setAuditItem(item); }}
-                    className="flex items-center gap-1.5 bg-red-600/90 hover:bg-red-500 text-white text-[9px] font-black uppercase px-3 py-1.5 rounded-full transition-all shadow-lg shadow-red-600/30"
+                    className="flex items-center gap-1.5 bg-gradient-to-r from-red-600 to-red-700 hover:scale-105 text-white text-[10px] font-black uppercase px-4 py-2 rounded-full transition-all shadow-[0_0_20px_rgba(229,9,20,0.5)]"
                   >
-                    <Flame size={10} /> Rate
+                    <Flame size={12} /> Rate
                   </button>
                 </div>
 
